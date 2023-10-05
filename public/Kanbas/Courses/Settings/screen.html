@@ -1,20 +1,77 @@
-<table width="100%">
-    <tr>
-      <td valign="top">
-        <ul>
-            <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-            <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-            <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-        </ul>
-      </td>
-      <td valign="top">
-        <ul>
+<html>
+    <head>
+       <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+       <link rel="stylesheet" href="../../../styles.css">
+       <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css">
+       <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css">
+       <link rel="stylesheet" href="../../../lib/fontawesome/css/all.css">
+       <style>
+        .no-wrap {
+            white-space: nowrap;
+        }
+
+        .nav-link {
+            color: red;
+        }
+    </style>
+       
+    </head>
+<body>
+    <div class="d-block d-md-none bg-black p-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item d-flex align-items-center">
+                    <a href="/Kanbas/KanbasNavigation" style="color: white;">
+                        <i class="fas fa-grip-lines"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item flex-fill text-center text-white active" aria-current="page">CS5610 Modules</li>
+                <li class="breadcrumb-item d-flex justify-content-end align-items-center">
+                    <a href="/Kanbas/Courses/CourseNavigation" class="text-white">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    
+    
+    <div class="wd-flex-row-container">
+        <div class="wd-bg-color-black d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+                <li><a href="/Kanbas/Account/Profile/screen.html">
+                  <i class="fas fa-user"></i>
+                  Account</a></li>
+              <li class="wd-active">
+              <a href="/Kanbas/Dashboard/screen.html">
+                  <i class="fas fa-tachometer-alt"></i>
+                  Dashboard</a></li>
+              <li><a href="/Kanbas/Courses/Home/screen.html">
+                  <i class="fas fa-book"></i>
+                  Courses</a></li>
+              <li><a href="#">
+                  <i class="fas fa-calendar-alt"></i>
+                  Calendar</a></li>
+              <li><a href="#">
+                  <i class="far fa-envelope"></i><br>
+                  Inbox</a></li>
+              <li><a href="#">
+                  <i class="far fa-clock"></i><br>
+                  History</a></li>
+              <li><a href="#">
+                  <i class="fas fa-laptop-code"></i><br>
+                  Studio</a></li>
+              <li><a href="#">
+                  <i class="fas fa-sign-out-alt"></i>
+                  Commons</a></li>
+              <li><a href="#">
+                  <i class="far fa-question-circle"></i><br>
+                  Help</a></li>
+          </ul>
+    </div>
+
+    <div>
+          <ul class="wd-course-navigation d-none d-md-block">
             <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
             <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
             <li><a href="#">Piazza</a></li>
@@ -34,245 +91,301 @@
             <li><a href="#">Outcomes</a></li>
             <li><a href="#">Collaborations</a></li>
             <li><a href="#">Syllabus</a></li>
-            <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+            <li class="wd-active"><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+          </ul>
+    </div>
+
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="/Kanbas/Courses/Settings/screen.html">Course Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sections</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Kanbas/Courses/Settings/NavigationScreen.html">Navigation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Apps</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Feature Options</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Integrations</a>
+            </li>
         </ul>
-      </td>
-      <td valign="top">
-        <table>
-            <tr>
-                <th><a href="/Kanbas/Courses/Settings/screen.html">Course Details</a></th>
-                <th><a href="#">Sections</a></th>
-                <th><a href="/Kanbas/Courses/Settings/NavigationScreen.html">Navigation</a></th>
-                <th><a href="#">Apps</a></th>
-                <th><a href="#">Feature Options</a></th>
-                <th><a href="#">Integrations</a></th>
-            
-            </tr>
-        </table>
-
-        <h1>Course Details</h1>
-        <table>
-            <tr valign="top">
-                <td>
-                    <h4>Image:</h4>
-                </td>
-                <td>
-                    <input  id="image_uploads" type="file" accept=".jpg, .jpeg, .png" ></input>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Name:</h4>
-                </td>
-                <td>
-                    <p>CS5610 11550 Web Development SEC 01 Fall 2023</p>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Course Code:</h4>
-                </td>
-                <td>
-                    <p>CS5610.11550.202410</p>
-                </td>
-            </tr>
-            <tr valign="top">
-                <td>
-                    <h4>Blueprint Course:</h4>
-                </td>
-                <td>
-                    <p>No</p>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Course Template</h4>
-                </td>
-                <td>
-                    <input type="checkbox">Enable course as a Course Template</input>
-                </td>
-            </tr>
-            <tr valign="top">
-                <td>
-                    <h4>Time Zone:</h4>
-                </td>
-                <td>
-                    <select>
-                        <option>Eastern Time (US & Canada)(-5:00/-04:00)</option>
-                    </select>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>SIS ID:</h4>
-                </td>
-                <td>
-                    <p>CS5610.11550.202410</p>
-                </td>
-            </tr>
-            <tr valign="top">
-                <td>
-                    <h4>Subaccount:</h4>
-                </td>
-                <td>
-                    <a href="#">CS grad</a>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Term:</h4>
-                </td>
-                <td>
-                    <p>202410_1 Fall 2023 Semester Full Term</p>
-                </td>
-            </tr>
-            <tr valign="top">
-                <td>
-                    <h4>Participation:</h4>
-                </td>
-                <td>
-                    <select>
-                        <option>Term</option>
-                    </select>
-                    <p>Course participation is limited to term start and end dates</p>
-                    <h4>Start</h4>
-                    <input type="date"></input>
-                    <h4>End</h4>
-                    <input type="date"></input><br>
-                    <input type="checkbox">Restrict students from viewing course before term start date</input>
-                    <input type="checkbox">Restrict students from viewing course after term end date</input>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Default due time:</h4>
-                </td>
-                <td>
-                    <select>
-                        <option>Account default (11:59pm)</option>
-                    </select>
-                    <p>This influence the user interface for setting due dates. It does not change the time due for any existing assignments.</p>
-                    </tr>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Language:</h4>
-                </td>
-                <td>
-                    <select>
-                        <option>Not set (user-configurable, defaults to English (Unit))</option>
-                    </select>
-                    <p> This will override any user/system language preferences. This is only recommended for foreign language courses.</p>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>File Storage:</h4>
-                </td>
-                <td>
-                    <p>10000 megabytes</p>
-                </td>
-            </tr>
-            <tr valign="top">
-                <td>
-                    <h4>Large Course:</h4>
-                </td>
-                <td>
-                    <input type="checkbox">Launch SpeedGrader Filtered by Student Group</input>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Grading Scheme:</h4>
-                </td>
-                <td>
-                    <input type="checkbox">Enable course grading scheme</input>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>License:</h4>
-                </td>
-                <td>
-                    <select>
-                        <option>Private (Copyrighted)</option>
-                    </select>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>File Copyright:</h4>
-                </td>
-                <td>
-                    <input type="checkbox">Copyright and license information must be provided for files before they are published.</input>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Visibility:</h4>
-                </td>
-                <td>
-                    <p>If you need to make your course public please contact your administrator/support</p><br />
-                    <select>
-                        <option>Course</option>
-                    </select><br>
-                    <input type="checkbox">Include this course in the public course index</input>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Format:</h4>
-                </td>
-                <td>
-                    <select>
-                        <option>On-Campus</option>
-                    </select>
-                </td>
-            </tr>
-
-            <tr valign="top">
-                <td>
-                    <h4>Mastery Paths:</h4>
-                </td>
-                <td>
-                    <input type="checkbox">Enable individual learning paths for students based on assessment</input>
-                </td>
-            </tr>
         
-            <tr valign="top">
-                <td>
-                    <h4>Descriptions:</h4>
-                </td>
-                <td>
-                    <textarea cols="40" rows="10"></textarea><br>
-                    <a href="#">more options</a>
-                </td>
-            </tr>
+        <div class="container mt-3">
         
-            <tr align="right">
-                <td>
-                    
-                </td>
-                <td>
-                    <button>Update Course Details</button>
-                </td>
-            </tr>
+            <h1>Course Details</h1>
+        
+            <form>
+                <div class="form-group row">
+                    <label for="image_uploads" class="col-sm-2 col-form-label no-wrap">Image:</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" id="image_uploads" accept=".jpg, .jpeg, .png">
+                    </div>
+                </div>
+              
+        
+                <div class="form-group row">
+                    <label for="nameText" class="col-sm-2 col-form-label no-wrap">Name:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" id="nameText">CS5610 11550 Web Development SEC 01 Fall 2023</p>
+                    </div>
+                </div>
+        
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Course Code:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">CS5610.11550.202410</p>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Bluprint Course:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">No</p>
+                    </div>
+                </div>
+        
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Course Template:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" disabled>
+                            <label class="form-check-label" for="defaultCheck1">
+                                Enable course as a Course Template
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
 
 
-        </table>
-  
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Time Zone:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Eastern Time (US & Canada)(-5:00/-04:00)</option>
+                       
+                        </select>
+                    </div>
+                </div>
+                
         
+                <div class="form-group row">
+                    <label for="nameText" class="col-sm-2 col-form-label no-wrap">SIS ID:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" id="nameText">CS4550.123333.3333</p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nameText" class="col-sm-2 col-form-label no-wrap">Subaccount:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" id="nameText" style="color: red;">CS Grad</p>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="nameText" class="col-sm-2 col-form-label no-wrap">Term:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" id="nameText">2024 Fall Full Semester</p>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Participation:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control mb-2">
+                            <option>Term</option>
+                           
+                        </select>
+                        <p class="mb-2">Course participation is limited to term start and end dates</p>
+                        
+                        <div class="form-inline mb-2">
+                            <label for="startDate" class="mr-2">Start:</label>
+                            <input type="date" class="form-control mr-4" id="startDate">
+                            <label for="endDate" class="mr-2">End:</label>
+                            <input type="date" class="form-control" id="endDate">
+                        </div>
+                        
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="restrictBefore" value="restrictBefore">
+                            <label class="form-check-label" for="restrictBefore">
+                                Restrict students from viewing course before term start date
+                            </label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="restrictAfter" value="restrictAfter">
+                            <label class="form-check-label" for="restrictAfter">
+                                Restrict students from viewing course after term end date
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                                
+               
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Default due time:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control mb-2">
+                            <option>Account default (11:59pm)</option>
+                            
+                        </select>
+                        <p>This influences the user interface for setting due dates. It does not change the time due for any existing assignments.</p>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Language:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control mb-2">
+                            <option>Not set (user-configurable, defaults to English (Unit))</option>
+                            
+                        </select>
+                        <p>This will override any user/system language preferences. This is only recommended for foreign language courses.</p>
+                    </div>
+                </div>
+
+               
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">File Storage:</label>
+                    <div class="col-sm-10">
+                        <p>10000 megabytes</p>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Large Course:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="largeCourseCheck">
+                            <label class="form-check-label" for="largeCourseCheck">Launch SpeedGrader Filtered by Student Group</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Grading AScheme:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="largeCourseCheck">
+                            <label class="form-check-label" for="largeCourseCheck">Enable course grading scheme</label>
+                        </div>
+                    </div>
+                </div>
+        
+          
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">License:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Private (Copyrighted)</option>
+                        
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">File Copyright:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="fileCopyrightCheck">
+                            <label class="form-check-label" for="fileCopyrightCheck">
+                                Copyright and license information must be provided for files before they are published.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+           
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Visibility:</label>
+                    <div class="col-sm-10">
+                        <p>If you need to make your course public please contact your administrator/support</p>
+                        <select class="form-control mb-2">
+                            <option>Course</option>
+                         
+                        </select>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="publicCourseIndexCheck">
+                            <label class="form-check-label" for="publicCourseIndexCheck">
+                                Include this course in the public course index
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Format:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>On-Campus</option>
+                         
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mastery Paths:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="masteryPathsCheck">
+                            <label class="form-check-label" for="masteryPathsCheck">
+                                Enable individual learning paths for students based on assessment
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label no-wrap">Description:</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="3"></textarea>
+                        <a href="#" class="wd-hyper-red">More options</a>
+                    </div>
+                </div>
+        <hr>
+                <div class="form-group row float-end">
+                    <div class="col-sm-10 offset-sm-2 no-wrap">
+                        <button type="submit" class="btn btn-danger">Update Course Details</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    </div>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,236 @@
-<table width="100%">
+<html>
+    <head>
+       <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+       <link rel="stylesheet" href="../../../styles.css">
+       <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css">
+       <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css">
+       <link rel="stylesheet" href="../../../lib/fontawesome/css/all.css">
+       <style>
+        .no-wrap {
+            white-space: nowrap;
+        }
+
+
+        .nav-link {
+            color: red;
+        }
+
+    </style>
+       
+    </head>
+<body>
+    <div class="d-block d-md-none bg-black p-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item d-flex align-items-center">
+                    <a href="/Kanbas/KanbasNavigation" style="color: white;">
+                        <i class="fas fa-grip-lines"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item flex-fill text-center text-white active" aria-current="page">CS5610 Modules</li>
+                <li class="breadcrumb-item d-flex justify-content-end align-items-center">
+                    <a href="/Kanbas/Courses/CourseNavigation" class="text-white">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    
+    
+    <div class="wd-flex-row-container">
+        <div class="wd-bg-color-black d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+                <li><a href="/Kanbas/Account/Profile/screen.html">
+                  <i class="fas fa-user"></i>
+                  Account</a></li>
+              <li class="wd-active">
+              <a href="/Kanbas/Dashboard/screen.html">
+                  <i class="fas fa-tachometer-alt"></i>
+                  Dashboard</a></li>
+              <li><a href="/Kanbas/Courses/Home/screen.html">
+                  <i class="fas fa-book"></i>
+                  Courses</a></li>
+              <li><a href="#">
+                  <i class="fas fa-calendar-alt"></i>
+                  Calendar</a></li>
+              <li><a href="#">
+                  <i class="far fa-envelope"></i><br>
+                  Inbox</a></li>
+              <li><a href="#">
+                  <i class="far fa-clock"></i><br>
+                  History</a></li>
+              <li><a href="#">
+                  <i class="fas fa-laptop-code"></i><br>
+                  Studio</a></li>
+              <li><a href="#">
+                  <i class="fas fa-sign-out-alt"></i>
+                  Commons</a></li>
+              <li><a href="#">
+                  <i class="far fa-question-circle"></i><br>
+                  Help</a></li>
+          </ul>
+    </div>
+
+    <div>
+          <ul class="wd-course-navigation d-none d-md-block">
+            <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+            <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
+            <li><a href="#">Piazza</a></li>
+            <li><a href="#">Zoom Meetings</a></li>
+            <li>
+              <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+            </li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Panopto Video</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Rubrics</a></li>
+            <li><a href="#">Outcomes</a></li>
+            <li><a href="#">Collaborations</a></li>
+            <li><a href="#">Syllabus</a></li>
+            <li class="wd-active"><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+          </ul>
+    </div>
+
+
+    <div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="/Kanbas/Courses/Settings/screen.html">Course Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Sections</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/Kanbas/Courses/Settings/NavigationScreen.html">Navigation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Apps</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Feature Options</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Integrations</a>
+        </li>
+    </ul>
+    
+
+    <div class="container mt-4">
+
+      <p>Drag and drop items to reorder them in the course navigation.</p>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Home
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Modules
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Piazza
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      zoom
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Assignment
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+  Quizzes
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+  Grades
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+  People
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+  Panopto Video
+  </li>
+
+</ul>
+
+      <p>Drag items here to hide them from students.</p>
+      <p>Disabling most pages will cause students who visit those pages to be redirected to the course home page</p>
+      
+      <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+              Chat
+              <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+          </li>
+      
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+              SCORM
+              <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+          </li>
+
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Attendance
+            <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Barnes
+          <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+      </li>
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Digication
+        <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      SCORM
+      <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+  </li>
+
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    SCORM
+    <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+</li>
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  SCORM
+  <span class="badge badge-secondary badge-pill">Page disabled, won't appear in navigation</span>
+</li>
+    
+      </ul>
+      
+      <button class="btn btn-danger mt-3">Save</button>
+  </div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table width="100%">
     <tr>
       <td valign="top">
         <ul>
@@ -106,4 +338,4 @@
 
         </table>
   
-        
+         -->
