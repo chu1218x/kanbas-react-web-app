@@ -1,0 +1,76 @@
+.wd-header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* The search input */
+.wd-header-buttons .wd-input-field {
+    flex-grow: 1;
+    height: auto;
+    margin-right: 1rem;
+    max-width: 300px;
+}
+
+/* Group of buttons container */
+.wd-header-buttons>div {
+    display: flex;
+    align-items: center;
+}
+
+.wd-header-buttons .btn {
+    height: 40px;
+    line-height: 1;
+}
+
+.wd-header-buttons .btn+.btn {
+    margin-left: 0.5rem;
+}
+
+.red-text {
+    color: red;
+}
+
+.assignment-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+}
+
+.assignment-list {
+    margin-top: 20px;
+}
+
+.assignment-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+}
+
+.assignment-icon {
+    flex: 0 0 40px;
+    font-size: 24px;
+}
+
+.assignment-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.assignment-status {
+    flex: 0 0 40px;
+    font-size: 24px;
+}
+
+.assignment-item-link {
+    text-decoration: none;
+    color: black;
+}
+
+.assignment-item-link:hover {
+    text-decoration: none;
+    color: black;
+}

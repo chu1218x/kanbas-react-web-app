@@ -1,0 +1,92 @@
+.gradebook-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.gradebook-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gradebook-title {
+    color: #d9534f;
+    margin: 0;
+}
+
+.gradebook-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.gradebook-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gradebook-btn:hover {
+    background-color: #e9e9e9;
+}
+
+.filters-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.filter-row {
+    flex: 1;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filter-row label {
+    margin-bottom: 5px;
+}
+
+.gradebook-input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.apply-filters-btn {
+    width: 100%;
+    max-width: 150px; 
+    background-color: #e7e7e7;
+    color: black;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.wd-grade-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wd-grade-table th, .wd-grade-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.wd-grade-table th {
+    background-color: #f9f9f9;
+}
+
+.student-name {
+    color: red;
+}
