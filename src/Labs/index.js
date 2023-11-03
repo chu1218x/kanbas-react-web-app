@@ -1,11 +1,14 @@
 import Assignment3 from "./a3";
 import Assignment4 from "./a4";
 import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
+import store from "./store";
+import { Provider } from "react-redux";
 
 function Labs() {
-    const { pathname } = useLocation();
-    // const { pathname } = location;
-    return (
+  const { pathname } = useLocation();
+  // const { pathname } = location;
+  return (
+    <Provider store={store}>
       <div className="container">
         <h1>Labs</h1>
         <div className="nav nav-pills">
@@ -27,7 +30,7 @@ function Labs() {
           >
             Kanbas
           </Link>
-          
+
         </div>
         <Routes>
           {/* <Route path="/" element={<Assignment3 />} /> */}
@@ -39,7 +42,8 @@ function Labs() {
         <Assignment4 />
         <Assignment5 /> */}
       </div>
-    );
-  }
-  
-  export default Labs;
+    </Provider>
+  );
+}
+
+export default Labs;

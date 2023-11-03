@@ -9,11 +9,13 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import {GrMenu} from "react-icons/gr";
 
-function Courses() {
+function Courses({ courses }) {
     const { courseId } = useParams();
     const {pathname} = useLocation();
-    const [empty, kanbas, courses, id, screen] = pathname.split("/");
-    const course = db.courses.find((course) => course._id === courseId);
+    //const [empty, kanbas, courses, id, screen] = pathname.split("/");
+    const screen = pathname.split("/").pop();
+
+    const course = courses.find((course) => course._id === courseId);
     return (
       <div>
         <h5>
