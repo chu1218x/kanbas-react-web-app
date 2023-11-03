@@ -1,18 +1,24 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../Database";
+import { useSelector } from 'react-redux';  
 
 function AssignmentEditor() {
-  const { assignmentId } = useParams();
-  const assignment = db.assignments.find(
-    (assignment) => assignment._id === assignmentId);
+  const { assignmentId, courseId } = useParams();
+  
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
 
-  const { courseId } = useParams();
+  const assignment = assignments.find(assignment => assignment._id === assignmentId);
+  
   const navigate = useNavigate();
   const handleSave = () => {
     console.log("Actually saving assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+
+  if (!assignment) {
+    return <div>Assignment not found</div>;
+  }
+
   return (
     <div>
       <h2>Assignment Name</h2>
@@ -29,8 +35,6 @@ function AssignmentEditor() {
       </div>
     </div>
   );
-  
 }
-
 
 export default AssignmentEditor;
