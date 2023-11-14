@@ -1,5 +1,6 @@
 import Assignment3 from "./a3";
 import Assignment4 from "./a4";
+import Assignment5 from "./a5";
 import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
 import store from "./store";
 import { Provider } from "react-redux";
@@ -25,6 +26,12 @@ function Labs() {
             Assignment 4
           </Link>
           <Link
+            to="/Labs/a5"
+            className={`nav-link ${pathname.includes("a5") ? "active" : ""}`}
+          >
+            Assignment 5
+          </Link>
+          <Link
             to="/Kanbas"
             className={`nav-link ${pathname.includes("Kanbas") ? "active" : ""}`}
           >
@@ -37,6 +44,7 @@ function Labs() {
           <Route path="/" element={<Navigate to="a3" />} />
           <Route path="a3/*" element={<Assignment3 />} />
           <Route path="a4/*" element={<Assignment4 />} />
+          <Route path="a5/*" element={<Assignment5 />} />
         </Routes>
         {/* <Assignment3 />
         <Assignment4 />

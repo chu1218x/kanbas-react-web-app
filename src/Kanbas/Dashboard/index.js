@@ -1,93 +1,97 @@
-import db from "../Database";
-import "./index.css";
-import Card from "./card";
-import { React, useState } from "react";
+import { Link } from "react-router-dom";
+//import axios from "axios";
+import { useEffect, useState } from "react";
+import * as client from "../Courses/client";
 
-function Dashboard(
-    { courses, course, setCourse, addNewCourse,
-        deleteCourse, updateCourse }
-) {
+function Dashboard() {
+    const [courses, setCourses] = useState([]);
+    const [course, setCourse] = useState({});
+    const fetchCourses = async () => {
+        //const response = await axios.get("http://localhost:4000/api/courses");
+        const courses = await client.fetchCourses();
+        setCourses(courses);
+    };
 
-    // const [courses, setCourses] = useState(db.courses);
-    // const [course, setCourse] = useState({
-    //     name: "New Course", number: "New Number",
-    //     startDate: "2023-09-10", endDate: "2023-12-15",
-    // });
+    const deleteCourse = async (id) => {
+        try {
+            await client.deleteCourse(id);
+            setCourses(courses.filter((c) => c._id !== id));
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
 
-    // const addNewCourse = () => {
-    //     const id = new Date().getTime().toString();
-    //     setCourses([...courses,
-    //     {
-    //         ...course,
-    //         _id: id,
-    //     }]);
+    const addCourse = async () => {
+        //const response = await axios.post("http://localhost:4000/api/courses", course);
+        const newCourse = await client.addCourse(course);
+        setCourses([newCourse, ...courses]);
+    }
 
-    // };
+    const updateCourse = async () => {
+        try {
+            await client.updateCourse(course);
+            setCourses(courses.map((c) => (
+                c._id === course._id ? course : c)));
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
-    // const deleteCourse = (courseId) => {
-    //     setCourses(courses.filter((course) => course._id !== courseId));
-    // };
+        useEffect(() => {
+            fetchCourses();
+        }, []);
 
-    // const updateCourse = () => {
-    //     setCourses(
-    //         courses.map((c) => {
-    //             if (c._id === course._id) {
-    //                 return course;
-    //             } else {
-    //                 return c;
-    //             }
-    //         })
-    //     );
-    // };
-
-
-    return (
-        <>
-            <h1>Dashboard</h1>
-            <hr />
-            <div className="container-fluid">
-                <h4>Published Courses({courses.length})</h4>
+        return (
+            <div>
+                <h1>Dashboard</h1>
                 <hr />
-
-                <div
-                    className="d-flex flex-wrap justify-content-start "
-                    id="cards-container">
-                    {
-                        courses.map(course => {
-                            return (<Card
-                                course={course}
-                                onDelete={() => deleteCourse(course._id)}
-                                onEdit={(selectedCourse) => {
-                                    setCourse(selectedCourse);
-                                }}
-                            />);
-                        })
-
-                    }
+                <h2>Published Courses ({courses.length})</h2>
+                <input
+                    type="text"
+                    placeholder="Course Name"
+                    value={course.name}
+                    onChange={(e) => setCourse({ ...course, name: e.target.value })}
+                />
+                <button onClick={updateCourse}
+                    className="btn btn-warning">Update</button>
+                <button onClick={addCourse}
+                    className="btn btn-success">Add</button>
+                <div className="row">
+                    <div className="row row-cols-1 row-cols-md-5 g-4">
+                        {courses.map((course) => (
+                            <div key={course._id} className="col" style={{ width: 300 }}>
+                                <div className="card">
+                                    <img src="/images/neu.png" className="card-img-top" alt="..." />
+                                    <div className="card-body">
+                                        <button onClick={() => deleteCourse(course._id)}
+                                            className="btn btn-danger float-end">
+                                                Delete</button>
+                                        <button
+                                            onClick={() => setCourse(course)}
+                                            className="btn btn-warning float-end">
+                                            Edit
+                                        </button>
+                                        <h5 className="card-title">{course.name}</h5>
+                                        <Link
+                                            to={`/Kanbas/Courses/${course._id}`}
+                                            className="btn btn-primary"
+                                        >
+                                            {course.name}
+                                        </Link>
+                                        <p className="card-text">
+                                            This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a
+                                            little bit longer.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <br />
-
-                <h5>Update Course</h5>
-                <input value={course.name} className="form-control"
-                    onChange={(e) => setCourse({ ...course, name: e.target.value })} />
-                <input value={course.number} className="form-control"
-                    onChange={(e) => setCourse({ ...course, number: e.target.value })} />
-                <input value={course.startDate} className="form-control" type="date"
-                    onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
-                <input value={course.endDate} className="form-control" type="date"
-                    onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
-
-                <button type="button" class="btn btn-danger float-end"
-                    onClick={addNewCourse} >
-                    Add
-                </button>
-                <button type="button" class="btn btn-success float-end"
-                    onClick={updateCourse} >
-                    Update
-                </button>
-
             </div>
-        </>
-    );
-}
-export default Dashboard;
+        );
+    }
+
+    export default Dashboard;

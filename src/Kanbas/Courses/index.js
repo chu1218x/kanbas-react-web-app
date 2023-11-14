@@ -1,6 +1,7 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import * as client from "../Courses/client";
 import { useParams, Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
-import db from "../Database";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -15,7 +16,18 @@ function Courses({ courses }) {
     //const [empty, kanbas, courses, id, screen] = pathname.split("/");
     const screen = pathname.split("/").pop();
 
-    const course = courses.find((course) => course._id === courseId);
+    //const course = courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+    const fetchCourse = async () => {
+        const course = await client.fetchCourse(courseId);
+        setCourse(course);
+    };
+
+    useEffect(() => {
+        fetchCourse();
+    } , []);  
+
+
     return (
       <div>
         <h5>

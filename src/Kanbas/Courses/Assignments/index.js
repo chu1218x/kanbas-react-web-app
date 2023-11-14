@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./index.css";
 import { FaEllipsisV } from "react-icons/fa";
@@ -7,8 +8,12 @@ import {
   addAssignment,
   deleteAssignment,
   updateAssignment,
-  setAssignment
+  setAssignment,
+  setAssignments,
 } from "./assignmentsReducer";
+import { createAssignment, findAssignmentsForCourse } from "./client";
+import * as client from "./client.js";
+
 
 function Assignments() {
   const { courseId } = useParams();
@@ -18,6 +23,30 @@ function Assignments() {
   const dispatch = useDispatch();
 
   const courseAssignments = assignments.filter(assignment => assignment.course === courseId);
+
+  const handleAddAssignment = () => {
+    createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  }
+
+  const handleDeleteAssignment = (assignmentId) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
+
+  const handleUpdateAssignment = async () => {
+    const status = await client.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
+
+  useEffect(() => {
+    findAssignmentsForCourse(courseId)
+      .then((assignments) =>
+        dispatch(setAssignments(assignments))
+      );  
+  }, [courseId]); 
 
   return (
     <div>
@@ -50,7 +79,7 @@ function Assignments() {
           <button
             type="button"
             className="btn btn-success"
-            onClick={() => dispatch(addAssignment({ ...assignment, course: courseId }))}
+            onClick={handleAddAssignment}
           >
             Add Assignment
           </button>
@@ -58,7 +87,7 @@ function Assignments() {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => dispatch(updateAssignment(assignment))}
+            onClick={handleUpdateAssignment}
           >
             Update
           </button>
@@ -90,7 +119,7 @@ function Assignments() {
                 onClick={(event) => {
                   event.preventDefault();
                   event.stopPropagation();
-                  dispatch(deleteAssignment(assignmentItem._id));
+                  handleDeleteAssignment(assignmentItem._id);
                 }}
               >
                 Delete
