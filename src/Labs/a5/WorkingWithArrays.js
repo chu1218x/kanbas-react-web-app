@@ -129,6 +129,31 @@ function WorkingWithArrays() {
                 </div>
             )}
 
+            <textarea
+                onChange={(e) => setTodo({
+                    ...todo,
+                    description: e.target.value
+                })}
+                value={todo.description} type="text"
+            />
+            <input
+                onChange={(e) => setTodo({
+                    ...todo, due: e.target.value
+                })}
+                value={todo.due} type="date"
+            />
+            <label>
+                <input
+                    onChange={(e) => setTodo({
+                        ...todo, completed: e.target.checked
+                    })}
+                    value={todo.completed} type="checkbox"
+                />
+                Completed
+            </label>
+            <button onClick={postTodo} >
+                Post Todo
+            </button>
 
             <ul className="list-group">
                 {todos.map((todo) => (
@@ -144,10 +169,12 @@ function WorkingWithArrays() {
                             Edit
                         </button>
                         <input
-              checked={todo.completed}
-              type="checkbox" readOnly
-            />
+                            checked={todo.completed}
+                            type="checkbox" readOnly
+                        />
                         {todo.title}
+                        <p>{todo.description}</p>
+                        <p>{todo.due}</p>
                     </li>
                 ))}
             </ul>
