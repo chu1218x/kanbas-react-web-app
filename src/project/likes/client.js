@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_API = "http://localhost:4000/api";
+// const BASE_API = "http://localhost:4000/api";
+const BASE_API = "https://a6-node-server-jbya.onrender.com/api";
 const USERS_API = `${BASE_API}/users`;
 const LIKES_API = `${BASE_API}/likes`;
 
